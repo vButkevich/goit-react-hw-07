@@ -16,39 +16,38 @@ const contactsSlice = createSlice({
         state.isLoading = true;
         state.hasError = null;
       })
-      .addCase(fetchContacts.fulfilled, (state, action) => {
+      .addCase(fetchContacts.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.items = action.payload;
+        state.items = payload;
       })
-      .addCase(fetchContacts.rejected, (state, action) => {
+      .addCase(fetchContacts.rejected, (state, { payload }) => {
         state.isLoading = false;
-        state.hasError = { state: true, error: action.payload };
+        state.hasError = { state: true, error: payload };
       })
       .addCase(addContact.pending, (state) => {
         state.isLoading = true;
         state.hasError = null;
       })
-      .addCase(addContact.fulfilled, (state, action) => {
+      .addCase(addContact.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.items.push(action.payload);
+        // console.log("addContact.fulfilled.push:payload :>> ", payload);
+        state.items.push(payload);
       })
-      .addCase(addContact.rejected, (state, action) => {
+      .addCase(addContact.rejected, (state, { payload }) => {
         state.isLoading = false;
-        state.hasError = { state: true, error: action.payload };
+        state.hasError = { state: true, error: payload };
       })
       .addCase(deleteContact.pending, (state) => {
         state.isLoading = true;
         state.hasError = null;
       })
-      .addCase(deleteContact.fulfilled, (state, action) => {
+      .addCase(deleteContact.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.items = state.items.filter(
-          (contact) => contact.id !== action.payload
-        );
+        state.items = state.items?.filter((contact) => contact.id !== payload);
       })
-      .addCase(deleteContact.rejected, (state, action) => {
+      .addCase(deleteContact.rejected, (state, { payload }) => {
         state.isLoading = false;
-        state.hasError = { state: true, error: action.payload };
+        state.hasError = { state: true, error: payload };
       });
   },
 });
