@@ -1,6 +1,7 @@
 import { useId } from "react";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+//import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../Api/contactsApi";
 import css from "./ContactForm.module.css";
 
 import { Formik } from "formik";
