@@ -1,9 +1,7 @@
 import { FaAddressBook } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-// import { fetchContacts, selectContactItems } from "./redux/contactsSlice";
-import { selectContactItems, selectContactsCount } from "./redux/contactsSlice";
+import { selectContactsCount } from "./redux/contactsSlice";
 import { fetchContacts } from "./Api/contactsApi.js";
-// "../../Api/contactsApi";
 
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
@@ -13,13 +11,11 @@ import "./App.css";
 
 const App = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
   const contacts = useSelector(selectContactsCount);
-  console.log("contacts :>> ", contacts);
 
   return (
     <div>

@@ -14,7 +14,7 @@ const ContactList = () => {
   return (
     <>
       <p>
-        <b>contacts:</b> ({contacts.length}) of {contactItems}
+        <b>contacts:</b> ({contacts?.length}) of {contactItems}
       </p>
       <hr></hr>
       <ul className={css["contact-list"]}>
