@@ -1,16 +1,20 @@
 import { useSelector } from "react-redux";
-import { selectContacts, selectContactItems } from "../../redux/contactsSlice";
+import {
+  selectContacts,
+  // selectContactItems,
+  selectContactsCount,
+} from "../../redux/contactsSlice";
 import css from "./Contactlist.module.css";
 import Contact from "../Contact/Contact";
 
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
-  const contactItems = useSelector(selectContactItems);
+  const contactItems = useSelector(selectContactsCount);
 
   return (
     <>
       <p>
-        <b>contacts:</b> ({contacts.length}) of {contactItems.length}
+        <b>contacts:</b> ({contacts.length}) of {contactItems}
       </p>
       <hr></hr>
       <ul className={css["contact-list"]}>

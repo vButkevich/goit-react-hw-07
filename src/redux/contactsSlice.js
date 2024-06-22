@@ -57,5 +57,9 @@ export const selectContacts = createSelector(
       contact.name.toLowerCase().includes(name.toLowerCase())
     )
 );
+export const selectContactsCount = createSelector(
+  [selectContactItems],
+  (contacts) => contacts?.length
+);
 
 export default contactsSlice.reducer;
