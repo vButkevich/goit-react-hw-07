@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 //import { deleteContact } from "../../redux/contactsSlice";
-import { deleteContact } from "../../Api/contactsApi";
+import { deleteContact } from "../../redux/contactsOps";
 
 import { FaAddressCard } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";

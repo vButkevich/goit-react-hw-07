@@ -1,7 +1,7 @@
 import { FaAddressBook } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { selectContactsCount } from "./redux/contactsSlice";
-import { fetchContacts } from "./Api/contactsApi.js";
+import { fetchContacts } from "./redux/contactsOps";
 
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
